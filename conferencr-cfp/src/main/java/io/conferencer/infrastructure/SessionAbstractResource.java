@@ -30,7 +30,6 @@ public class SessionAbstractResource {
         LOGGER.debug("Adding {}", sessionAbstract);
 
         sessionAbstract.persist();
-
-        return Response.created(URI.create("/" + sessionAbstract.id)).build();
+        return Response.created(URI.create("/" + sessionAbstract.id)).entity(sessionAbstract).build();
     }
 }
