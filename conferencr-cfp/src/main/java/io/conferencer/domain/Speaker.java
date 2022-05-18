@@ -2,11 +2,13 @@ package io.conferencer.domain;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Speaker extends PanacheEntity {
 
+    @Column(unique = true)
     private String email;
 
     private String firstName;
