@@ -3,6 +3,7 @@ package io.conferencer.domain;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
@@ -14,7 +15,7 @@ public class SessionAbstract extends PanacheEntity {
 
     private String slug;
 
-    @Lob
+    @Lob @Column(name = "ABSTRACT_BODY", length = 500)
     private String body;
 
     @ManyToOne

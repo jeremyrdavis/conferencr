@@ -21,7 +21,7 @@ public class SessionAbstractResource {
 
     private static final Logger LOGGER = getLogger(SessionAbstractResource.class);
 
-    @GET
+    @GET@Transactional
     public Response getAbstracts() {
 
         List<SessionAbstract> sessionAbstracts = SessionAbstract.listAll();
